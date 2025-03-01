@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+<style>
+    /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    margin-top: 50px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 18px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+
+#feedback {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+</style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guess the Number</h1>
+        <p>I have chosen a number between 1 and 100. Can you guess it?</p>
+
+        <input type="number" id="userGuess" placeholder="Enter your guess">
+        <button id="guessButton">Guess</button>
+        <p id="feedback"></p>
+
+        <button id="resetButton" style="display: none;">Play Again</button>
+    </div>
+    
+    <script>
+        // script.js
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+let guessButton = document.getElementById('guessButton');
+let resetButton = document.getElementById('resetButton');
+let feedback = document.getElementById('feedback');
+let userGuess = document.getElementById('userGuess');
+
+guessButton.addEventListener('click', checkGuess);
+resetButton.addEventListener('click', resetGame);
+
+function checkGuess() {
+    let guess = parseInt(userGuess.value);
+
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        feedback.textContent = 'Please enter a number between 1 and 100.';
+        return;
+    }
+
+    if (guess === randomNumber) {
+        feedback.textContent = `Correct! You guessed the number ${randomNumber}.`;
+        endGame();
+    } else if (guess > randomNumber) {
+        feedback.textContent = 'Too high! Try again.';
+    } else {
+        feedback.textContent = 'Too low! Try again.';
+    }
+
+    userGuess.value = ''; // Clear input field
+}
+
+function endGame() {
+    guessButton.disabled = true;
+    resetButton.style.display = 'inline';
+}
+
+function resetGame() {
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    feedback.textContent = '';
+    userGuess.value = '';
+    guessButton.disabled = false;
+    resetButton.style.display = 'none';
+}
+
+    </script>
+</body>
+</html>

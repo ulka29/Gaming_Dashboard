@@ -1,0 +1,28 @@
+const word = [
+    { word: "apple", hint: "A popular fruit" },
+    { word: "table", hint: "Furniture with legs" },
+    { word: "river", hint: "A large natural stream of water" },
+    { word: "planet", hint: "Orbits around a star" },
+    { word: "chair", hint: "You sit on it" },
+    { word: "phone", hint: "A device used to make calls" },
+    { word: "book", hint: "You read it" },
+    { word: "computer", hint: "Used to browse the internet" },
+    { word: "bottle", hint: "Holds liquids" },
+    { word: "pencil", hint: "Used for writing or drawing" },
+    { word: "guitar", hint: "A musical instrument with strings" },
+    { word: "pizza", hint: "A popular Italian dish" },
+    { word: "mountain", hint: "A large natural elevation of the Earth's surface" },
+    { word: "ocean", hint: "A vast body of saltwater" },
+    { word: "clock", hint: "Tells time" },
+    { word: "bicycle", hint: "A two-wheeled vehicle powered by pedaling" },
+    { word: "camera", hint: "Used to take photos" },
+    { word: "cloud", hint: "A visible mass of condensed water vapor in the sky" },
+    { word: "garden", hint: "A place where plants and flowers are grown" },
+    { word: "elephant", hint: "The largest land animal" },
+    { word: "rainbow", hint: "A colorful arc in the sky after rain" },
+    { word: "pyramid", hint: "A triangular ancient structure in Egypt" },
+    { word: "butterfly", hint: "An insect with colorful wings" },
+    { word: "castle", hint: "A large, fortified building from medieval times" },
+    { word: "train", hint: "A mode of transport that runs on tracks" }
+  ];
+  
